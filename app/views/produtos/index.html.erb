@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+<div class="alert alert-sucess" role="alert">
+    <%= flash[:notice] %>
+</div>
+<% end %>
+
+<table  class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% #render partial: "produto", collection: @produtos_por_nome %>
+        <%= render @produtos_por_nome %>
+    </tbody>
+</table>
+
+<%= button_to "Criar Camiseta", new_produto_path, method: :get, class: "btn btn-primary" %>
